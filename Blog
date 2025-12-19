@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой блог</title>
+</head>
+<body>
+    <h1>Добро пожаловать в мой блог!</h1>
+    <p>Здесь я делюсь своими мыслями, идеями и историями.</p>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .date {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Мой блог</h1>
+    <div class="date" id="current-date">Загрузка даты...</div>
+
+    <script>
+        // Массивы для перевода дней недели и месяцев на русский
+        const days = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"];
+        const months = [
+            "января", "февраля", "марта", "апреля", "мая", "июня",
+            "июля", "августа", "сентября", "октября", "ноября", "декабря"
+        ];
+
+        const now = new Date();
+        const dayName = days[now.getDay()];
+        const day = now.getDate();
+        const month = months[now.getMonth()];
+        const year = now.getFullYear();
+
+        // Формат: "Пятница, 19 декабря 2025 года"
+        const formattedDate = `${dayName.charAt(0).toUpperCase() + dayName.slice(1)}, ${day} ${month} ${year} года`;
+
+        document.getElementById("current-date").textContent = formattedDate;
+    </script>
+</body>
+</html>
